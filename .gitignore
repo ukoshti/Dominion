@@ -2,3 +2,5 @@ Gina.ipynb
 .ipynb
 .ipynb_checkpoints
 puppies.pkl
+/__pycache__
+*.pyc
