@@ -1,165 +1,165 @@
-﻿Card Name,Set Name
-Cellar,Base
-Chapel,Base
-Moat,Base
-Village,Base
-Workshop,Base
-Bureaucrat,Base
-Gardens,Base
-Militia,Base
-Moneylender,Base
-Remodel,Base
-Smithy,Base
-Throne Room,Base
-Council Room,Base
-Festival,Base
-Laboratory,Base
-Library,Base
-Market,Base
-Mine,Base
-Witch,Base
-Harbinger,Base
-Merchant,Base
-Vassal,Base
-Poacher,Base
-Bandit,Base
-Sentry,Base
-Artisan,Base
-Hamlet,Cornucopia
-Fortune Teller,Cornucopia
-Menagerie,Cornucopia
-Farming Village,Cornucopia
-Horse Traders,Cornucopia
-Remake,Cornucopia
-Tournament,Cornucopia
-Young Witch,Cornucopia
-Harvest,Cornucopia
-Horn of Plenty,Cornucopia
-Hunting Party,Cornucopia
-Jester,Cornucopia
-Fairgrounds,Cornucopia
-Poor House,Dark Ages
-Beggar,Dark Ages
-Squire,Dark Ages
-Vagrant,Dark Ages
-Forager,Dark Ages
-Hermit,Dark Ages
-Market Square,Dark Ages
-Sage,Dark Ages
-Storeroom,Dark Ages
-Urchin,Dark Ages
-Armory,Dark Ages
-Death Cart,Dark Ages
-Feodum,Dark Ages
-Fortress,Dark Ages
-Ironmonger,Dark Ages
-Marauder,Dark Ages
-Procession,Dark Ages
-Rats,Dark Ages
-Scavenger,Dark Ages
-Wandering Minstrel,Dark Ages
-Band of Misfits,Dark Ages
-Bandit Camp,Dark Ages
-Catacombs,Dark Ages
-Count,Dark Ages
-Counterfeit,Dark Ages
-Cultist,Dark Ages
-Graverobber,Dark Ages
-Junk Dealer,Dark Ages
-Mystic,Dark Ages
-Pillage,Dark Ages
-Rebuild,Dark Ages
-Rogue,Dark Ages
-Altar,Dark Ages
-Hunting Grounds,Dark Ages
-Knights,Dark Ages
-Candlestick Maker,Guilds
-Stonemason,Guilds
-Doctor,Guilds
-Masterpiece,Guilds
-Advisor,Guilds
-Herald,Guilds
-Plaza,Guilds
-Taxman,Guilds
-Baker,Guilds
-Butcher,Guilds
-Journeyman,Guilds
-Merchant Guild,Guilds
-Soothsayer,Guilds
-Courtyard,Intrigue
-Pawn,Intrigue
-Masquerade,Intrigue
-Shanty Town,Intrigue
-Steward,Intrigue
-Swindler,Intrigue
-Wishing Well,Intrigue
-Baron,Intrigue
-Bridge,Intrigue
-Conspirator,Intrigue
-Ironworks,Intrigue
-Mining Village,Intrigue
-Duke,Intrigue
-Minion,Intrigue
-Torturer,Intrigue
-Trading Post,Intrigue
-Upgrade,Intrigue
-Harem,Intrigue
-Nobles,Intrigue
-Lurker,Intrigue
-Diplomat,Intrigue
-Mill,Intrigue
-Secret Passage,Intrigue
-Courtier,Intrigue
-Patrol,Intrigue
-Replace,Intrigue
-Loan,Prosperity
-Trade Route,Prosperity
-Watchtower,Prosperity
-Bishop,Prosperity
-Monument,Prosperity
-Quarry,Prosperity
-Talisman,Prosperity
-Worker's Village,Prosperity
-City,Prosperity
-Contraband,Prosperity
-Counting House,Prosperity
-Mint,Prosperity
-Mountebank,Prosperity
-Rabble,Prosperity
-Royal Seal,Prosperity
-Vault,Prosperity
-Venture,Prosperity
-Goons,Prosperity
-Grand Market,Prosperity
-Hoard,Prosperity
-Bank,Prosperity
-Expand,Prosperity
-Forge,Prosperity
-King's Court,Prosperity
-Peddler,Prosperity
-Embargo,Seaside
-Haven,Seaside
-Lighthouse,Seaside
-Native Village,Seaside
-Pearl Diver,Seaside
-Ambassador,Seaside
-Fishing Village,Seaside
-Lookout,Seaside
-Smugglers,Seaside
-Warehouse,Seaside
-Caravan,Seaside
-Cutpurse,Seaside
-Island,Seaside
-Navigator,Seaside
-Pirate Ship,Seaside
-Salvager,Seaside
-Sea Hag,Seaside
-Treasure Map,Seaside
-Bazaar,Seaside
-Explorer,Seaside
-Ghost Ship,Seaside
-Merchant Ship,Seaside
-Outpost,Seaside
-Tactician,Seaside
-Treasury,Seaside
-Wharf,Seaside
+﻿Card Name,Set Name,Cost
+Cellar,Base,2
+Chapel,Base,2
+Moat,Base,2
+Village,Base,3
+Workshop,Base,3
+Bureaucrat,Base,4
+Gardens,Base,4
+Militia,Base,4
+Moneylender,Base,4
+Remodel,Base,4
+Smithy,Base,4
+Throne Room,Base,4
+Council Room,Base,5
+Festival,Base,5
+Laboratory,Base,5
+Library,Base,5
+Market,Base,5
+Mine,Base,5
+Witch,Base,5
+Harbinger,Base,3
+Merchant,Base,3
+Vassal,Base,3
+Poacher,Base,4
+Bandit,Base,5
+Sentry,Base,5
+Artisan,Base,6
+Hamlet,Cornucopia,2
+Fortune Teller,Cornucopia,3
+Menagerie,Cornucopia,3
+Farming Village,Cornucopia,4
+Horse Traders,Cornucopia,4
+Remake,Cornucopia,4
+Tournament,Cornucopia,4
+Young Witch,Cornucopia,4
+Harvest,Cornucopia,5
+Horn of Plenty,Cornucopia,5
+Hunting Party,Cornucopia,5
+Jester,Cornucopia,5
+Fairgrounds,Cornucopia,6
+Poor House,Dark Ages,1
+Beggar,Dark Ages,2
+Squire,Dark Ages,2
+Vagrant,Dark Ages,2
+Forager,Dark Ages,2
+Hermit,Dark Ages,3
+Market Square,Dark Ages,3
+Sage,Dark Ages,3
+Storeroom,Dark Ages,3
+Urchin,Dark Ages,3
+Armory,Dark Ages,4
+Death Cart,Dark Ages,4
+Feodum,Dark Ages,4
+Fortress,Dark Ages,4
+Ironmonger,Dark Ages,4
+Marauder,Dark Ages,4
+Procession,Dark Ages,4
+Rats,Dark Ages,4
+Scavenger,Dark Ages,4
+Wandering Minstrel,Dark Ages,4
+Band of Misfits,Dark Ages,5
+Bandit Camp,Dark Ages,5
+Catacombs,Dark Ages,5
+Count,Dark Ages,5
+Counterfeit,Dark Ages,5
+Cultist,Dark Ages,5
+Graverobber,Dark Ages,5
+Junk Dealer,Dark Ages,5
+Knights,Dark Ages,5
+Mystic,Dark Ages,5
+Pillage,Dark Ages,5
+Rebuild,Dark Ages,5
+Rogue,Dark Ages,5
+Altar,Dark Ages,6
+Hunting Grounds,Dark Ages,6
+Candlestick Maker,Guilds,2
+Stonemason,Guilds,2
+Doctor,Guilds,3
+Masterpiece,Guilds,3
+Advisor,Guilds,4
+Herald,Guilds,4
+Plaza,Guilds,4
+Taxman,Guilds,4
+Baker,Guilds,5
+Butcher,Guilds,5
+Journeyman,Guilds,5
+Merchant Guild,Guilds,5
+Soothsayer,Guilds,5
+Courtyard,Intrigue,2
+Pawn,Intrigue,2
+Masquerade,Intrigue,3
+Shanty Town,Intrigue,3
+Steward,Intrigue,3
+Swindler,Intrigue,3
+Wishing Well,Intrigue,3
+Baron,Intrigue,4
+Bridge,Intrigue,4
+Conspirator,Intrigue,4
+Ironworks,Intrigue,4
+Mining Village,Intrigue,4
+Duke,Intrigue,5
+Minion,Intrigue,5
+Torturer,Intrigue,5
+Trading Post,Intrigue,5
+Upgrade,Intrigue,5
+Harem,Intrigue,6
+Nobles,Intrigue,6
+Lurker,Intrigue,2
+Diplomat,Intrigue,3
+Mill,Intrigue,4
+Secret Passage,Intrigue,4
+Courtier,Intrigue,5
+Patrol,Intrigue,5
+Replace,Intrigue,5
+Loan,Prosperity,3
+Trade Route,Prosperity,3
+Watchtower,Prosperity,3
+Bishop,Prosperity,4
+Monument,Prosperity,4
+Quarry,Prosperity,4
+Talisman,Prosperity,4
+Worker's Village,Prosperity,4
+City,Prosperity,5
+Contraband,Prosperity,5
+Counting House,Prosperity,5
+Mint,Prosperity,5
+Mountebank,Prosperity,5
+Rabble,Prosperity,5
+Royal Seal,Prosperity,5
+Vault,Prosperity,5
+Venture,Prosperity,5
+Goons,Prosperity,6
+Grand Market,Prosperity,6
+Hoard,Prosperity,7
+Bank,Prosperity,7
+Expand,Prosperity,7
+Forge,Prosperity,7
+King's Court,Prosperity,7
+Peddler,Prosperity,8
+Embargo,Seaside,2
+Haven,Seaside,2
+Lighthouse,Seaside,2
+Native Village,Seaside,2
+Pearl Diver,Seaside,2
+Ambassador,Seaside,3
+Fishing Village,Seaside,3
+Lookout,Seaside,3
+Smugglers,Seaside,3
+Warehouse,Seaside,3
+Caravan,Seaside,4
+Cutpurse,Seaside,4
+Island,Seaside,4
+Navigator,Seaside,4
+Pirate Ship,Seaside,4
+Salvager,Seaside,4
+Sea Hag,Seaside,4
+Treasure Map,Seaside,4
+Bazaar,Seaside,5
+Explorer,Seaside,5
+Ghost Ship,Seaside,5
+Merchant Ship,Seaside,5
+Outpost,Seaside,5
+Tactician,Seaside,5
+Treasury,Seaside,5
+Wharf,Seaside,5
