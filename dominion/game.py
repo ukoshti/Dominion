@@ -42,7 +42,6 @@ class Game:
         Game.to_pickle(available[:-num_cards])
         return available[-num_cards:]
 
-    @classmethod
     def shuffle(self, cards, picks = 10):
         total_cards = len(cards)
         for i in range(picks):
