@@ -58,7 +58,6 @@ class Game:
                 bane = twothree[random.randrange(0, len(twothree))]
         return bane
 
-    @classmethod
     def shuffle(self, cards, picks = 10):
         total_cards = len(cards)
         for i in range(picks):
