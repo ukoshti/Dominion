@@ -5,6 +5,7 @@ if __name__ == '__main__':
     game = Game()
     os.system('cls||clear')
     print(game, '\n')
+
     while True:
         val = input("Play a new game (Y/n)?")
         if val in ['', 'y', 'Y']:

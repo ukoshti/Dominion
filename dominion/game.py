@@ -37,34 +37,33 @@ class Game:
     def pick(self, num_cards = 10):
         total_cards = len(self.decks['current'])
         if total_cards < num_cards:
-            reload = self.allcards
+            self.decks['next'] = self.decks['next'] + self.decks['used']
             self.decks['used'] = []
-            count = 1
-            for card in self.decks['current']:
-                indx = reload.index(card)
-                reload[indx], reload[len(reload)-count] = reload[len(reload)-count], reload[indx]
-                count = count + 1
-            self.decks['current'] = self.shuffle(reload[:-total_cards], num_cards - total_cards) + reload[-total_cards:]
+            self.decks['next'] = self.shuffle(self.decks['next'], num_cards - total_cards)
+            game_cards = self.decks['current'] + self.decks['next'][-(num_cards - total_cards):]
+            self.decks['current'] = self.decks['next'][:-(num_cards - total_cards)]
+            self.decks['next'] = []
         else:
             self.decks['current'] = self.shuffle(self.decks['current'], num_cards)
-        game_cards = self.decks['current'][-num_cards:]
-        self.decks['used'] = self.decks['used'] + game_cards
-        self.decks['current'] = self.decks['current'][:-num_cards]
-        Game.save_decks(self.decks)
+            game_cards = self.decks['current'][-num_cards:]
+            self.decks['current'] = self.decks['current'][:-num_cards]
         return game_cards
 
     def _bane(self, cards):
         bane = None
-        # allcards = self.allcards[:]
-        # for card in cards:
-        #     allcards.remove(card)
         for card in cards:
             if card['Card Name'] == 'Young Witch':
                 twothree = [c for c in self.decks['current'] if c['Cost'] == 2 or c['Cost'] == 3]
-                if not twothree:
-                    pass
-                else:
+                if twothree:
                     bane = twothree[random.randrange(0, len(twothree))]
+                    self.decks['current'].remove(bane)
+                else:
+                    self.decks['next'] = self.decks['used']
+                    self.decks['used'] = []
+                    twothree = [c for c in self.decks['next'] if c['Cost'] == 2 or c['Cost'] == 3]
+                    if twothree:
+                        bane = twothree[random.randrange(0, len(twothree))]
+                        self.decks['next'].remove(bane)
                 break
         return bane
 
@@ -78,6 +77,10 @@ class Game:
     def next_game(self, num_cards = 10):
         self.cards = sorted(self.pick(), key = lambda x: (x["Set Name"], x["Card Name"]))
         self.bane = self._bane(self.cards)
+        self.decks['used'] = self.decks['used'] + self.cards
+        if self.bane:
+            self.decks['used'].append(self.bane)
+        Game.save_decks(self.decks)
         self.has_shelters = self._shelters(self.cards)
         self.has_platcol = self._platcol(self.cards)
 
