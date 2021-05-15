@@ -4,6 +4,7 @@ import pickle
 
 class Game:
     def __init__(self):
+        self.allcards = Game.load_csv()
         self.next_game()
         
     def _shelters(self, cards):
@@ -17,20 +18,24 @@ class Game:
 
     def _deck_stats(self):
         remaining_cards = len(Game.load_pickle())
-        total_cards = len(Game.load_csv())
+        total_cards = len(self.allcards)
         return f'Remaining Cards: {remaining_cards}\nTotal Cards: {total_cards}'
 
     def __str__(self):
         cards_print = ""
         for card in self.cards:
             cards_print = cards_print + f"{self._card_to_str(card)}\n"
+ 
+        if self.bane is not None:
+            cards_print = cards_print + f"{self._card_to_str(self.bane)} (Bane)\n"
+
         return f"{cards_print}\nShelters: {self.has_shelters}\nPlatinums and Colonies: {self.has_platcol}\n\n{self._deck_stats()}"
     
     def pick(self, num_cards = 10): 
         available = Game.load_pickle()
         total_cards = len(available)
         if total_cards < num_cards:
-            reload = Game.load_csv()
+            reload = self.allcards
             count = 1
             for card in available:
                 indx = reload.index(card)
@@ -42,6 +47,17 @@ class Game:
         Game.to_pickle(available[:-num_cards])
         return available[-num_cards:]
 
+    def _bane(self, cards):
+        bane = None
+        allcards = self.allcards[:]
+        for card in cards:
+            allcards.remove(card)
+        for card in cards:
+            if card['Card Name'] == 'Young Witch':
+                twothree = [c for c in allcards if c['Cost'] == 2 or c['Cost'] == 3]
+                bane = twothree[random.randrange(0, len(twothree))]
+        return bane
+
     @classmethod
     def shuffle(self, cards, picks = 10):
         total_cards = len(cards)
@@ -52,6 +68,7 @@ class Game:
 
     def next_game(self, num_cards = 10):
         self.cards = sorted(self.pick(), key = lambda x: (x["Set Name"], x["Card Name"]))
+        self.bane = self._bane(self.cards)
         self.has_shelters = self._shelters(self.cards)
         self.has_platcol = self._platcol(self.cards)
 
