@@ -5,7 +5,7 @@ import pickle
 class Game:
     def __init__(self):
         self.allcards = Game.load_csv()
-        self.deck = Game.load_deck()
+        self.decks = Game.load_decks()
         self.next_game()
         
     def _shelters(self, cards):
@@ -18,9 +18,11 @@ class Game:
         return f'{card["Set Name"] + ":" :<11} {card["Card Name"]}'
 
     def _deck_stats(self):
-        remaining_cards = len(self.deck)
+        remaining_cards = len(self.decks['current'])
+        used_cards = len(self.decks['used'])
+        next_cards = len(self.decks['next'])
         total_cards = len(self.allcards)
-        return f'Remaining Cards: {remaining_cards}\nTotal Cards: {total_cards}'
+        return f'Remaining Cards: {remaining_cards}\nTotal Cards: {total_cards}\nUsed Cards: {used_cards}\nNext Cards: {next_cards}'
 
     def __str__(self):
         cards_print = ""
@@ -33,31 +35,37 @@ class Game:
         return f"{cards_print}\nShelters: {self.has_shelters}\nPlatinums and Colonies: {self.has_platcol}\n\n{self._deck_stats()}"
     
     def pick(self, num_cards = 10):
-        total_cards = len(self.deck)
+        total_cards = len(self.decks['current'])
         if total_cards < num_cards:
             reload = self.allcards
+            self.decks['used'] = []
             count = 1
-            for card in self.deck:
+            for card in self.decks['current']:
                 indx = reload.index(card)
                 reload[indx], reload[len(reload)-count] = reload[len(reload)-count], reload[indx]
                 count = count + 1
-            self.deck = self.shuffle(reload[:-total_cards], num_cards - total_cards) + reload[-total_cards:]
+            self.decks['current'] = self.shuffle(reload[:-total_cards], num_cards - total_cards) + reload[-total_cards:]
         else:
-            self.deck = self.shuffle(self.deck, num_cards)
-        game_cards = self.deck[-num_cards:]
-        self.deck = self.deck[:-num_cards]
-        Game.to_pickle(self.deck)
+            self.decks['current'] = self.shuffle(self.decks['current'], num_cards)
+        game_cards = self.decks['current'][-num_cards:]
+        self.decks['used'] = self.decks['used'] + game_cards
+        self.decks['current'] = self.decks['current'][:-num_cards]
+        Game.save_decks(self.decks)
         return game_cards
 
     def _bane(self, cards):
         bane = None
-        allcards = self.allcards[:]
-        for card in cards:
-            allcards.remove(card)
+        # allcards = self.allcards[:]
+        # for card in cards:
+        #     allcards.remove(card)
         for card in cards:
             if card['Card Name'] == 'Young Witch':
-                twothree = [c for c in allcards if c['Cost'] == 2 or c['Cost'] == 3]
-                bane = twothree[random.randrange(0, len(twothree))]
+                twothree = [c for c in self.decks['current'] if c['Cost'] == 2 or c['Cost'] == 3]
+                if not twothree:
+                    pass
+                else:
+                    bane = twothree[random.randrange(0, len(twothree))]
+                break
         return bane
 
     def shuffle(self, cards, picks = 10):
@@ -74,12 +82,16 @@ class Game:
         self.has_platcol = self._platcol(self.cards)
 
     @staticmethod
-    def load_deck():
+    def load_decks():
         try:
             with open('../data/puppies.pkl', 'rb') as f:
                 return pickle.load(f)
         except:
-            return Game.load_csv()
+            return {
+                'current': Game.load_csv(),
+                'next': [],
+                'used': []
+            }
 
     @staticmethod
     def load_csv():
@@ -87,6 +99,6 @@ class Game:
         return df.to_dict("records")
 
     @staticmethod
-    def to_pickle(cards):
+    def save_decks(cards):
         with open('../data/puppies.pkl', 'wb') as f:
             pickle.dump(cards, f)
